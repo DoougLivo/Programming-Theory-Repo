@@ -5,10 +5,10 @@ using UnityEngine.AI;
 
 public class Rabbit : Animal
 {
-    private float m_MoveInterval = 3f;
+    private float m_Rabbit_MoveInterval = 3f;
     public float MoveInterval // 이동 간격
     {
-        get { return m_MoveInterval; }
+        get { return m_Rabbit_MoveInterval; }
         set
         {
             if (value < 0.0f)
@@ -17,7 +17,7 @@ public class Rabbit : Animal
             }
             else
             {
-                m_MoveInterval = value;
+                m_Rabbit_MoveInterval = value;
             }
         }
     }
@@ -26,7 +26,7 @@ public class Rabbit : Animal
     {
         timer += Time.deltaTime;
 
-        if (timer >= m_MoveInterval)
+        if (timer >= m_Rabbit_MoveInterval)
         {
             MoveToRandomPosition();
             timer = 0f;

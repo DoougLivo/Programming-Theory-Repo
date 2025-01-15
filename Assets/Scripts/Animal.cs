@@ -9,9 +9,11 @@ public class Animal : MonoBehaviour
     private float m_MoveInterval = 5f; 
 
     protected float timer;
+    private Animator anim;
 
     protected void Start()
     {
+        anim = GetComponent<Animator>();
         agent = GetComponent<NavMeshAgent>();
         MoveToRandomPosition();
     }
@@ -25,8 +27,11 @@ public class Animal : MonoBehaviour
     {
         timer += Time.deltaTime;
 
+        anim.SetFloat("move_f", 0);
+        
         if (timer >= m_MoveInterval)
         {
+            anim.SetFloat("move_f", 1f);
             MoveToRandomPosition();
             timer = 0f;
         }

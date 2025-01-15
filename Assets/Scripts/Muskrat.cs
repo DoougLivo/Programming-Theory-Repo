@@ -4,10 +4,10 @@ using UnityEngine;
 
 public class Muskrat : Animal
 {
-    private float m_MoveInterval = 4f; // 이동 간격
+    private float m_Muskrat_MoveInterval = 4f; // 이동 간격
     public float MoveInterval
     {
-        get { return m_MoveInterval; }
+        get { return m_Muskrat_MoveInterval; }
         set
         {
             if (value < 0.0f)
@@ -16,7 +16,7 @@ public class Muskrat : Animal
             }
             else
             {
-                m_MoveInterval = value;
+                m_Muskrat_MoveInterval = value;
             }
         }
     }
@@ -25,7 +25,7 @@ public class Muskrat : Animal
     {
         timer += Time.deltaTime;
 
-        if (timer >= m_MoveInterval)
+        if (timer >= m_Muskrat_MoveInterval)
         {
             MoveToRandomPosition();
             timer = 0f;
